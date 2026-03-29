@@ -75,10 +75,6 @@ const config: Config = {
     },
     navbar: {
       title: 'AgentLog',
-      logo: {
-        alt: 'AgentLog Logo',
-        src: 'img/logo.png',
-      },
       items: [
         {
           type: 'docSidebar',

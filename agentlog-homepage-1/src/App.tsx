@@ -4,8 +4,8 @@
  */
 
 import { motion } from 'motion/react';
-import { Github, Globe, ExternalLink, ChevronRight, Plane, GitBranch, Sun, Moon, Share2, ArrowUpRight } from 'lucide-react';
-import { FEATURES } from './constants';
+import { Github, Globe, ExternalLink, ChevronRight, Plane, GitBranch, Sun, Moon } from 'lucide-react';
+import { FEATURES, THEMES } from './constants';
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
@@ -96,10 +96,49 @@ const Hero = () => (
   </section>
 );
 
+const FeatureCard = ({ title, description, icon: Icon, index }: any) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.05 }}
+    className="group p-10 rounded-3xl tonal-card flex flex-col items-center text-center"
+  >
+    <div className="w-16 h-16 rounded-2xl bg-surface-high flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+      <Icon className="text-primary w-8 h-8" />
+    </div>
+    <h3 className="font-display text-lg font-bold mb-4 tracking-tight">
+      {title}
+    </h3>
+    <p className="text-white/30 leading-relaxed text-sm font-mono">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const VSCodeSidebar = () => (
+  <div className="mt-32 w-full max-w-5xl mx-auto">
+    <div className="flex flex-col items-center mb-12">
+      <h2 className="font-display text-sm uppercase tracking-[0.3em] text-white/30 mb-8">VSCode Sidebar (Monochrome)</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+        {THEMES.map((theme, i) => (
+          <div key={i} className={`p-6 rounded-2xl ${theme.bg} flex flex-col items-center gap-4 relative overflow-hidden group cursor-pointer`}>
+            {theme.selected && <div className="absolute top-3 right-3 w-3 h-3 bg-orange-500 rounded-full shadow-[0_0_10px_rgba(249,115,22,0.5)]" />}
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${theme.selected ? 'bg-white/10' : 'bg-white/5'}`}>
+              <theme.icon className={`w-6 h-6 ${theme.text} ${theme.name === 'Theme' ? '' : 'rotate-[-45deg]'}`} />
+            </div>
+            <span className={`text-xs font-medium ${theme.text} opacity-60`}>{theme.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 const Features = () => (
   <section className="py-32 bg-surface-dim">
     <div className="max-w-7xl mx-auto px-6">
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-8 md:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4">
         {FEATURES.map((feature, i) => (
           <div key={i} className="flex flex-col items-center gap-4 group cursor-pointer">
             <div className="w-16 h-16 rounded-2xl bg-surface-low group-hover:bg-surface-high transition-colors flex items-center justify-center">
@@ -111,6 +150,8 @@ const Features = () => (
           </div>
         ))}
       </div>
+      
+      <VSCodeSidebar />
     </div>
   </section>
 );

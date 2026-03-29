@@ -4,13 +4,13 @@
  */
 
 .heroBanner {
-  padding: 10rem 0 6rem;
+  padding: 6rem 0 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0b1326 0%, #131b2e 100%);
   color: #ffffff;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -54,23 +54,73 @@
 }
 
 /* Logo Icon */
+.heroLogoWrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
 .heroLogo {
-  width: 96px;
-  height: 96px;
-  background: var(--ifm-background-surface-color);
-  border-radius: 16px;
-  border: 1px solid rgba(0, 209, 255, 0.2);
+  position: relative;
+  width: 192px;
+  height: 192px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 50px -12px rgba(0, 209, 255, 0.3);
+}
+
+.heroLogoGlow {
+  position: absolute;
+  inset: 0;
+  background: var(--ifm-color-primary);
+  filter: blur(80px);
+  opacity: 0.2;
+}
+
+.heroLogoCircle {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, transparent 60%);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 209, 255, 0.1);
 }
 
 .heroLogoIcon {
-  width: 48px;
-  height: 48px;
+  position: relative;
+  width: 96px;
+  height: 96px;
   color: var(--ifm-color-primary);
+  transform: rotate(-45deg);
+  filter: drop-shadow(0 0 30px rgba(0, 209, 255, 0.5));
+}
+
+.speedLine1 {
+  position: absolute;
+  right: -40px;
+  top: 40%;
+  width: 24px;
+  height: 3px;
+  background: linear-gradient(to left, var(--ifm-color-primary), transparent);
+  opacity: 0.5;
+}
+
+.speedLine2 {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to left, var(--ifm-color-primary), transparent);
+  opacity: 0.3;
+}
+
+.speedLine3 {
+  position: absolute;
+  right: -20px;
+  top: 60%;
+  width: 32px;
+  height: 3px;
+  background: linear-gradient(to left, var(--ifm-color-primary), transparent);
+  opacity: 0.4;
 }
 
 .heroTitle {
@@ -131,40 +181,38 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
-  padding: 0.75rem 2rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
   border-radius: 8px;
   transition: all 0.2s ease;
-  background: linear-gradient(135deg, #00d1ff, #a4e6ff);
-  color: #0b1326;
+  background: #f1a139;
+  color: #000;
   border: none;
 }
 
 .buttonPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 209, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(241, 161, 57, 0.4);
   text-decoration: none;
-  color: #0b1326;
+  color: #000;
 }
 
 .buttonOutline {
   display: inline-flex;
   align-items: center;
-  font-weight: 600;
-  padding: 0.75rem 2rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
   border-radius: 8px;
   transition: all 0.2s ease;
   background: transparent;
-  color: #00d1ff;
-  border: 2px solid rgba(0, 209, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(60, 73, 78, 0.15);
 }
 
 .buttonOutline:hover {
-  background: rgba(0, 209, 255, 0.1);
-  border-color: #00d1ff;
-  transform: translateY(-2px);
+  background: rgba(19, 27, 46, 0.8);
   text-decoration: none;
-  color: #00d1ff;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .buttonIcon {

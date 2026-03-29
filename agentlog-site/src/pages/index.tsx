@@ -6,7 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import { motion } from 'framer-motion';
-import { Terminal, ChevronRight } from 'lucide-react';
+import { Plane, ChevronRight } from 'lucide-react';
 
 import styles from './index.module.css';
 
@@ -32,8 +32,19 @@ function HomepageHeader() {
           className={styles.heroContent}
         >
           {/* Logo Icon */}
-          <div className={styles.heroLogo}>
-            <Terminal className={styles.heroLogoIcon} />
+          <div className={styles.heroLogoWrapper}>
+            <div className={styles.heroLogoGlow} />
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className={styles.heroLogo}
+            >
+              <div className={styles.heroLogoCircle} />
+              <Plane className={styles.heroLogoIcon} />
+              <div className={styles.speedLine1} />
+              <div className={styles.speedLine2} />
+              <div className={styles.speedLine3} />
+            </motion.div>
           </div>
 
           <Heading as="h1" className={styles.heroTitle}>

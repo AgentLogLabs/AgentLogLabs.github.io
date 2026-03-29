@@ -103,6 +103,9 @@
   --ifm-color-emphasis-700: #4a4a5e;
   --ifm-color-emphasis-600: #6b6b7e;
   
+  --ifm-color-content: #1a1a2e;
+  --ifm-color-content-secondary: #6b6b7e;
+  
   --ifm-navbar-background-color: #ffffff;
   --ifm-footer-background-color: #ffffff;
   --ifm-card-background-color: #ffffff;

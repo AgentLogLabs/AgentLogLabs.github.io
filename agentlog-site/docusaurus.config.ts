@@ -85,21 +85,21 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Docs',
+          label: '文档',
         },
         {
           to: '/docs/quick-start',
-          label: 'Quick Start',
+          label: '快速开始',
           position: 'left',
         },
         {
           to: '/docs/installation',
-          label: 'Installation',
+          label: '安装',
           position: 'left',
         },
         {
           to: '/docs/faq',
-          label: 'FAQ',
+          label: '常见问题',
           position: 'left',
         },
         {

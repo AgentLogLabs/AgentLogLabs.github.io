@@ -1,49 +1,27 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 ---
 
-# 安装
+# VS Code 插件安装
 
-详细安装指南。
+本指南详细介绍如何安装 AgentLog VS Code 插件。
 
 ## 环境准备
 
-确保你的开发环境满足以下要求：
-
-- Node.js >= 18
-- pnpm >= 9
+- VS Code
 - Git
 
 ## 安装步骤
 
-### 1. 克隆仓库
+### 1. 安装插件
 
-```bash
-git clone https://github.com/agentlog/agentlog.git
-cd agentlog
-```
+在 VS Code 中搜索 **AgentLog**，点击安装。
 
-### 2. 安装依赖
+### 2. 开始使用
 
-```bash
-pnpm install
-```
+安装完成后，VS Code 侧边栏会出现 AgentLog 面板，表示安装成功。
 
-### 3. 构建共享类型
-
-其他包依赖此包，所以需要先构建。
-
-```bash
-pnpm build:shared
-```
-
-### 4. 启动后台服务
-
-启动本地后台服务，默认端口 7892。
-
-```bash
-pnpm dev
-```
+插件会自动启动后台服务（端口 7892）。
 
 ## 配置
 
@@ -57,6 +35,8 @@ pnpm dev
 | `agentlog.autoBindOnCommit` | `true` | commit 时自动绑定最近未绑定的会话 |
 | `agentlog.debug` | `false` | 开启调试日志 |
 
-## 验证
+## 其他安装方式
 
-安装完成后，你可以在 VS Code 侧边栏看到 AgentLog 面板，表示安装成功。
+如果你不使用 VS Code，可通过 Docker 部署后端服务：
+
+- [Docker 部署](./docker-deployment) - 支持任意 MCP 客户端（Cline、Cursor、OpenCode、Roo Code 等）

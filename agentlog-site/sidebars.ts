@@ -15,9 +15,12 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     "intro",
-    "features",
     "quick-start",
-    "installation",
+    {
+      type: "category",
+      label: "安装部署",
+      items: ["installation", "docker-deployment"],
+    },
     "mcp-integration",
     {
       type: "category",
@@ -34,6 +37,7 @@ const sidebars: SidebarsConfig = {
       label: "开发",
       items: ["development", "contributing"],
     },
+    "features",
   ],
 };
 

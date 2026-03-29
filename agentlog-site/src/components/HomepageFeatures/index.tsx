@@ -38,6 +38,24 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
+    title: 'Git Worktree 支持',
+    icon: '🌿',
+    description: (
+      <>
+        多个 AI Agent 可同时在不同 worktree 上并行工作，各自会话精准绑定到对应 Commit，互不干扰。
+      </>
+    ),
+  },
+  {
+    title: 'Commit 上下文文档',
+    icon: '📄',
+    description: (
+      <>
+        自动生成 Markdown/JSON/XML 格式的 AI 交互上下文文档，便于注入新 AI 对话或 Code Review。
+      </>
+    ),
+  },
+  {
     title: '侧边栏面板',
     icon: '📊',
     description: (
@@ -61,6 +79,15 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         所有数据存储在本机 SQLite，完全离线可用，保护你的代码隐私和知识产权。
+      </>
+    ),
+  },
+  {
+    title: '中英文国际化',
+    icon: '🌐',
+    description: (
+      <>
+        完整支持中文和英文输出，界面和导出文档自由切换，满足不同场景需求。
       </>
     ),
   },

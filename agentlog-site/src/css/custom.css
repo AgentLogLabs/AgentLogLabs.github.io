@@ -1,0 +1,116 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+  /* Primary Architecture - Active Intelligence */
+  --ifm-color-primary: #00d1ff;
+  --ifm-color-primary-dark: #00bce6;
+  --ifm-color-primary-darker: #00b2d9;
+  --ifm-color-primary-darkest: #0092b3;
+  --ifm-color-primary-light: #1ad6ff;
+  --ifm-color-primary-lighter: #26d9ff;
+  --ifm-color-primary-lightest: #4de0ff;
+
+  /* Surface Hierarchy - The Digital Curator */
+  --ifm-background-color: #0b1326; /* surface */
+  --ifm-background-surface-color: #131b2e; /* surface-container-low */
+  --ifm-card-background-color: #222a3d; /* surface-container-high */
+  
+  /* Text colors */
+  --ifm-color-emphasis-900: #ffffff;
+  --ifm-color-emphasis-800: #e6e6e6;
+  --ifm-color-emphasis-700: #cccccc;
+  --ifm-color-emphasis-600: #b3b3b3;
+  
+  /* Fonts - Technical Core meets Editorial Precision */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --ifm-heading-font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  
+  /* Code block styling */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 209, 255, 0.1);
+  
+  /* Navbar and footer */
+  --ifm-navbar-background-color: #131b2e;
+  --ifm-footer-background-color: #131b2e;
+  
+  /* Card styling */
+  --ifm-card-border-radius: 8px;
+  --ifm-card-background-color: #222a3d;
+  --ifm-card-border-color: transparent;
+}
+
+/* Apply heading font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+}
+
+/* Code blocks */
+code {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Cards */
+.card {
+  background-color: var(--ifm-card-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  border: 1px solid var(--ifm-card-border-color);
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+  border-bottom: none;
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--ifm-footer-background-color);
+}
+
+/* Button styling */
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: #0b1326;
+  border: none;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* Glassmorphism for modals */
+.modal {
+  background-color: rgba(45, 52, 73, 0.7); /* surface_container_highest at 70% opacity */
+  backdrop-filter: blur(20px);
+}
+
+/* The "No-Line" Rule - use background transitions instead of borders */
+.sidebar {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* For light mode (if ever needed) */
+[data-theme='light'] {
+  --ifm-background-color: #f5f7fa;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #ffffff;
+  
+  /* Text colors for light mode */
+  --ifm-color-emphasis-900: #1a1a1a;
+  --ifm-color-emphasis-800: #333333;
+  --ifm-color-emphasis-700: #4d4d4d;
+  --ifm-color-emphasis-600: #666666;
+}

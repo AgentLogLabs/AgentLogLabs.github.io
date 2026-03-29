@@ -1,0 +1,82 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b1326 0%, #131b2e 100%);
+  color: #ffffff;
+}
+
+.heroBanner .hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #a4e6ff, #00d1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroBanner .hero__subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #cccccc;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+  }
+  
+  .heroBanner .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .heroBanner .hero__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.buttons .button {
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.buttons .button--primary {
+  background: linear-gradient(135deg, #00d1ff, #a4e6ff);
+  color: #0b1326;
+  border: none;
+}
+
+.buttons .button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 209, 255, 0.3);
+}
+
+.buttons .button--outline {
+  background: transparent;
+  color: #00d1ff;
+  border: 2px solid rgba(0, 209, 255, 0.3);
+}
+
+.buttons .button--outline:hover {
+  background: rgba(0, 209, 255, 0.1);
+  border-color: #00d1ff;
+  transform: translateY(-2px);
+}

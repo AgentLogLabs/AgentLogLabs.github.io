@@ -1,0 +1,8 @@
+agentlog:
+  name: AgentLog Team
+  title: AI 编程行车记录仪
+  url: https://github.com/agentlog/agentlog
+  image_url: https://github.com/agentlog.png
+  page: true
+  socials:
+    github: agentlog

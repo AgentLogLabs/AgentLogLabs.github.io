@@ -1,0 +1,24 @@
+ai:
+  label: AI
+  permalink: /ai
+  description: Artificial Intelligence and Machine Learning
+
+programming:
+  label: Programming
+  permalink: /programming
+  description: Software development and coding
+
+vscode:
+  label: VS Code
+  permalink: /vscode
+  description: Visual Studio Code extensions and tools
+
+git:
+  label: Git
+  permalink: /git
+  description: Version control and collaboration
+
+productivity:
+  label: Productivity
+  permalink: /productivity
+  description: Developer productivity tools and workflows

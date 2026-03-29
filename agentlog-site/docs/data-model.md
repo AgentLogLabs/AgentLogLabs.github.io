@@ -10,7 +10,7 @@ AgentLog 使用 SQLite 数据库存储所有数据，采用严格的数据模型
 
 - **数据库引擎**：SQLite 3.x（通过 `better-sqlite3` 驱动）
 - **存储路径**：`~/.agentlog/agentlog.db`（可通过 `AGENTLOG_DB_PATH` 环境变量覆盖）
-- **当前版本**：Schema v2
+- **当前版本**：Schema v4
 - **WAL 模式**：默认启用 Write-Ahead Logging，支持读写并发
 
 ## 表结构
@@ -26,7 +26,8 @@ AgentLog 使用 SQLite 数据库存储所有数据，采用严格的数据模型
 | `provider` | TEXT | NOT NULL | AI 提供商，如 `deepseek`、`openai`、`anthropic` |
 | `model` | TEXT | NOT NULL | 模型名称，如 `deepseek-r1`、`gpt-4`、`claude-3.5-sonnet` |
 | `source` | TEXT | NOT NULL | 会话来源，如 `cline`、`cursor`、`opencode`、`mcp-tool-call` |
-| `workspace_path` | TEXT | NOT NULL | 工作区绝对路径 |
+| `workspace_path` | TEXT | NOT NULL | 工作区绝对路径（多 worktree 场景下为各 worktree 路径） |
+| `git_repo_root` | TEXT | | Git 仓库根目录（多 worktree 共享，用于跨 worktree 绑定） |
 | `prompt` | TEXT | NOT NULL | 用户提示（首次 user 消息内容） |
 | `reasoning` | TEXT | | 模型推理过程，如 DeepSeek-R1 的 `<think>` 内容 |
 | `response` | TEXT | NOT NULL | 模型最终响应（最后一条 assistant 消息内容） |
@@ -46,6 +47,9 @@ CREATE INDEX idx_sessions_created_at ON agent_sessions(created_at DESC);
 
 -- 按工作区查询（多项目支持）
 CREATE INDEX idx_sessions_workspace ON agent_sessions(workspace_path);
+
+-- 按仓库根目录查询（多 worktree 场景，跨 worktree 匹配）
+CREATE INDEX idx_sessions_git_repo_root ON agent_sessions(git_repo_root);
 
 -- 按模型提供商查询（统计过滤）
 CREATE INDEX idx_sessions_provider ON agent_sessions(provider);
@@ -214,11 +218,26 @@ CREATE INDEX idx_commits_committed_at ON commit_bindings(committed_at);
 CREATE INDEX idx_commits_workspace ON commit_bindings(workspace_path);
 ```
 
-### 版本 2（当前版本）
+### 版本 2
 ```sql
 -- 新增 transcript 和 token_usage 字段
 ALTER TABLE agent_sessions ADD COLUMN transcript TEXT NOT NULL DEFAULT '[]';
 ALTER TABLE agent_sessions ADD COLUMN token_usage TEXT;
+```
+
+### 版本 3
+```sql
+-- 新增 git_repo_root 字段，支持多 worktree 场景
+ALTER TABLE agent_sessions ADD COLUMN git_repo_root TEXT;
+
+-- 新增索引支持跨 worktree 查询
+CREATE INDEX idx_sessions_git_repo_root ON agent_sessions(git_repo_root);
+```
+
+### 版本 4（当前版本）
+```sql
+-- 保持与版本 3 相同，git_repo_root 字段已存在
+-- 工作tree支持通过运行时逻辑实现，无需额外Schema变更
 ```
 
 ## 数据生命周期

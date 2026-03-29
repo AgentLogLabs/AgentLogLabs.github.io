@@ -38,7 +38,7 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="AI 编程行车记录仪"
+      title="AI 编程飞行记录仪"
       description="自动捕获 AI Agent 交互日志，与 Git Commit 绑定，一键导出周报或 PR 说明。">
       <HomepageHeader />
       <main>

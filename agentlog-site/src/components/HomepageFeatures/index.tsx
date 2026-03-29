@@ -11,38 +11,38 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: '自动捕获',
+    title: '基于 MCP 协议主动上报',
     icon: '🎙️',
     description: (
       <>
-        拦截发往 DeepSeek / Qwen / Kimi 等 API 的请求，提取 Prompt + Response，完整记录 AI 交互过程。
+        采用 Model Context Protocol 标准，AI Agent 主动上报交互记录，完整捕获 AI 交互过程。
       </>
     ),
   },
   {
-    title: 'Git 绑定',
-    icon: '🔗',
-    description: (
-      <>
-        通过 post-commit 钩子，自动将每次提交与相关 AI 会话关联，追溯代码变更的 AI 决策过程。
-      </>
-    ),
-  },
-  {
-    title: '本地优先',
-    icon: '🏠',
-    description: (
-      <>
-        所有数据存储在本机 SQLite，完全离线可用，保护你的代码隐私和知识产权。
-      </>
-    ),
-  },
-  {
-    title: '推理保存',
+    title: '推理过程保存',
     icon: '🧠',
     description: (
       <>
-        专项支持 DeepSeek-R1 的推理链，完整存储中间思考步骤，理解 AI 的决策逻辑。
+        专项支持 DeepSeek-R1 推理链，完整存储中间思考步骤，理解 AI 的决策逻辑。
+      </>
+    ),
+  },
+  {
+    title: 'Git Commit 绑定',
+    icon: '🔗',
+    description: (
+      <>
+        通过 Git Hook 自动将提交与相关 AI 会话关联，追溯代码变更的 AI 决策过程。
+      </>
+    ),
+  },
+  {
+    title: '侧边栏面板',
+    icon: '📊',
+    description: (
+      <>
+        VS Code 侧边栏显示会话列表、Commit 绑定关系、统计数据，随时查看 AI 使用情况。
       </>
     ),
   },
@@ -56,11 +56,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '侧边栏面板',
-    icon: '📊',
+    title: '本地优先',
+    icon: '🏠',
     description: (
       <>
-        VS Code 侧边栏显示会话列表、Commit 绑定关系、统计数据，随时查看 AI 使用情况。
+        所有数据存储在本机 SQLite，完全离线可用，保护你的代码隐私和知识产权。
       </>
     ),
   },

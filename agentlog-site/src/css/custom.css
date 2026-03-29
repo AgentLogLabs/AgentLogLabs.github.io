@@ -9,27 +9,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
-/* You can override the default Infima variables here. */
+/* Light theme as default */
 :root {
   /* Primary Architecture - Active Intelligence */
-  --ifm-color-primary: #00d1ff;
-  --ifm-color-primary-dark: #00bce6;
-  --ifm-color-primary-darker: #00b2d9;
-  --ifm-color-primary-darkest: #0092b3;
-  --ifm-color-primary-light: #1ad6ff;
-  --ifm-color-primary-lighter: #26d9ff;
-  --ifm-color-primary-lightest: #4de0ff;
+  --ifm-color-primary: #00a8cc;
+  --ifm-color-primary-dark: #0097b8;
+  --ifm-color-primary-darker: #008ca9;
+  --ifm-color-primary-darkest: #007289;
+  --ifm-color-primary-light: #0ebde6;
+  --ifm-color-primary-lighter: #19c4ed;
+  --ifm-color-primary-lightest: #33ccf5;
 
-  /* Surface Hierarchy - The Digital Curator */
-  --ifm-background-color: #0b1326; /* surface */
-  --ifm-background-surface-color: #131b2e; /* surface-container-low */
-  --ifm-card-background-color: #222a3d; /* surface-container-high */
+  /* Surface Hierarchy - Light Background */
+  --ifm-background-color: #f8fafc;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
   
   /* Text colors */
-  --ifm-color-emphasis-900: #ffffff;
-  --ifm-color-emphasis-800: #e6e6e6;
-  --ifm-color-emphasis-700: #cccccc;
-  --ifm-color-emphasis-600: #b3b3b3;
+  --ifm-color-emphasis-900: #1a1a2e;
+  --ifm-color-emphasis-800: #2d2d44;
+  --ifm-color-emphasis-700: #4a4a5e;
+  --ifm-color-emphasis-600: #6b6b7e;
+  --ifm-color-emphasis-500: #8c8c9a;
+  --ifm-color-emphasis-400: #adadb8;
+  --ifm-color-emphasis-300: #ceced6;
+  --ifm-color-emphasis-200: #efeef2;
+  --ifm-color-emphasis-100: #f7f7f9;
+  --ifm-color-emphasis-0: #ffffff;
   
   /* Fonts - Technical Core meets Editorial Precision */
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
@@ -38,16 +44,51 @@
   
   /* Code block styling */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 209, 255, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 168, 204, 0.1);
   
   /* Navbar and footer */
-  --ifm-navbar-background-color: #131b2e;
-  --ifm-footer-background-color: #131b2e;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #ffffff;
   
   /* Card styling */
   --ifm-card-border-radius: 8px;
+  --ifm-card-background-color: #ffffff;
+  --ifm-card-border-color: #e2e8f0;
+  
+  /* Link colors */
+  --ifm-link-color: #00a8cc;
+  --ifm-link-hover-color: #0097b8;
+  
+  /* Navbar shadow */
+  --ifm-navbar-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Dark theme (optional, for toggle) */
+[data-theme='dark'] {
+  --ifm-color-primary: #00d1ff;
+  --ifm-color-primary-dark: #00bce6;
+  --ifm-color-primary-darker: #00b2d9;
+  --ifm-color-primary-darkest: #0092b3;
+  --ifm-color-primary-light: #1ad6ff;
+  --ifm-color-primary-lighter: #26d9ff;
+  --ifm-color-primary-lightest: #4de0ff;
+
+  --ifm-background-color: #0b1326;
+  --ifm-background-surface-color: #131b2e;
+  --ifm-card-background-color: #222a3d;
+  
+  --ifm-color-emphasis-900: #ffffff;
+  --ifm-color-emphasis-800: #e6e6e6;
+  --ifm-color-emphasis-700: #cccccc;
+  --ifm-color-emphasis-600: #b3b3b3;
+  
+  --ifm-navbar-background-color: #131b2e;
+  --ifm-footer-background-color: #131b2e;
   --ifm-card-background-color: #222a3d;
   --ifm-card-border-color: transparent;
+  
+  --ifm-link-color: #00d1ff;
+  --ifm-link-hover-color: #1ad6ff;
 }
 
 /* Apply heading font */

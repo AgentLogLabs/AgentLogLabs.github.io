@@ -35,6 +35,11 @@ const config: Config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+
   presets: [
     [
       'classic',
@@ -54,7 +59,15 @@ const config: Config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+
   themeConfig: {
+    mermaid: {
+      theme: {
+        light: 'default',
+        dark: 'dark',
+      },
+    },
     // Replace with your project's social card
     image: 'img/Generated Image March 27, 2026 - 8_30PM.jpg',
     colorMode: {

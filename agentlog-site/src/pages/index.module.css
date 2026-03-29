@@ -4,42 +4,117 @@
  */
 
 .heroBanner {
-  padding: 6rem 0;
+  padding: 10rem 0 6rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0b1326 0%, #131b2e 100%);
   color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
-.heroBanner .hero__title {
-  font-size: 3.5rem;
+/* Background Pattern */
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.heroGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--ifm-color-primary) 0%, transparent 50%);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 100%;
+  width: 100%;
+}
+
+.gridCell {
+  border-right: 1px solid rgba(60, 73, 78, 0.3);
+  border-bottom: 1px solid rgba(60, 73, 78, 0.3);
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Icon */
+.heroLogo {
+  width: 96px;
+  height: 96px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 209, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 50px -12px rgba(0, 209, 255, 0.3);
+}
+
+.heroLogoIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--ifm-color-primary);
+}
+
+.heroTitle {
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #a4e6ff, #00d1ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: var(--ifm-heading-font-family);
+  letter-spacing: -0.02em;
 }
 
-.heroBanner .hero__subtitle {
+.heroSubtitle {
   font-size: 1.5rem;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto 2rem;
-  color: #cccccc;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 3rem 1rem;
+    padding: 8rem 1rem 4rem;
+    min-height: auto;
   }
-  
-  .heroBanner .hero__title {
+
+  .heroTitle {
     font-size: 2.5rem;
   }
-  
-  .heroBanner .hero__subtitle {
+
+  .heroSubtitle {
     font-size: 1.2rem;
+  }
+
+  .heroLogo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .heroLogoIcon {
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -48,35 +123,51 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-.buttons .button {
+.buttonPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   padding: 0.75rem 2rem;
   border-radius: 8px;
   transition: all 0.2s ease;
-}
-
-.buttons .button--primary {
   background: linear-gradient(135deg, #00d1ff, #a4e6ff);
   color: #0b1326;
   border: none;
 }
 
-.buttons .button--primary:hover {
+.buttonPrimary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 209, 255, 0.3);
+  text-decoration: none;
+  color: #0b1326;
 }
 
-.buttons .button--outline {
+.buttonOutline {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   background: transparent;
   color: #00d1ff;
   border: 2px solid rgba(0, 209, 255, 0.3);
 }
 
-.buttons .button--outline:hover {
+.buttonOutline:hover {
   background: rgba(0, 209, 255, 0.1);
   border-color: #00d1ff;
   transform: translateY(-2px);
+  text-decoration: none;
+  color: #00d1ff;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
 }

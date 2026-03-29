@@ -9,27 +9,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
-/* Light theme as default */
+/* Custom CSS Variables for Demo Style */
+:root {
+  /* Surface Hierarchy - Dark Theme */
+  --color-surface: #0b1326;
+  --color-surface-low: #131b2e;
+  --color-surface-high: #222a3d;
+  --color-surface-highest: #2d3449;
+  --color-primary: #00d1ff;
+  --color-primary-dim: #a4e6ff;
+  --color-outline-variant: rgba(60, 73, 78, 0.2);
+}
+
+/* Dark theme as default - matching demo style */
 :root {
   /* Primary Architecture - Active Intelligence */
-  --ifm-color-primary: #00a8cc;
-  --ifm-color-primary-dark: #0097b8;
-  --ifm-color-primary-darker: #008ca9;
-  --ifm-color-primary-darkest: #007289;
-  --ifm-color-primary-light: #0ebde6;
-  --ifm-color-primary-lighter: #19c4ed;
-  --ifm-color-primary-lightest: #33ccf5;
+  --ifm-color-primary: #00d1ff;
+  --ifm-color-primary-dark: #00bce6;
+  --ifm-color-primary-darker: #00b2d9;
+  --ifm-color-primary-darkest: #0092b3;
+  --ifm-color-primary-light: #1ad6ff;
+  --ifm-color-primary-lighter: #26d9ff;
+  --ifm-color-primary-lightest: #4de0ff;
 
-  /* Surface Hierarchy - Light Background */
-  --ifm-background-color: #f8fafc;
-  --ifm-background-surface-color: #ffffff;
-  --ifm-card-background-color: #ffffff;
+  /* Surface Hierarchy - Dark Background */
+  --ifm-background-color: #0b1326;
+  --ifm-background-surface-color: #131b2e;
+  --ifm-card-background-color: #222a3d;
   
   /* Text colors */
-  --ifm-color-emphasis-900: #1a1a2e;
-  --ifm-color-emphasis-800: #2d2d44;
-  --ifm-color-emphasis-700: #4a4a5e;
-  --ifm-color-emphasis-600: #6b6b7e;
+  --ifm-color-emphasis-900: #ffffff;
+  --ifm-color-emphasis-800: #e6e6e6;
+  --ifm-color-emphasis-700: #cccccc;
+  --ifm-color-emphasis-600: #b3b3b3;
   --ifm-color-emphasis-500: #8c8c9a;
   --ifm-color-emphasis-400: #adadb8;
   --ifm-color-emphasis-300: #ceced6;
@@ -44,51 +56,60 @@
   
   /* Code block styling */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 168, 204, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 209, 255, 0.1);
   
   /* Navbar and footer */
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #ffffff;
-  
-  /* Card styling */
-  --ifm-card-border-radius: 8px;
-  --ifm-card-background-color: #ffffff;
-  --ifm-card-border-color: #e2e8f0;
-  
-  /* Link colors */
-  --ifm-link-color: #00a8cc;
-  --ifm-link-hover-color: #0097b8;
-  
-  /* Navbar shadow */
-  --ifm-navbar-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-}
-
-/* Dark theme (optional, for toggle) */
-[data-theme='dark'] {
-  --ifm-color-primary: #00d1ff;
-  --ifm-color-primary-dark: #00bce6;
-  --ifm-color-primary-darker: #00b2d9;
-  --ifm-color-primary-darkest: #0092b3;
-  --ifm-color-primary-light: #1ad6ff;
-  --ifm-color-primary-lighter: #26d9ff;
-  --ifm-color-primary-lightest: #4de0ff;
-
-  --ifm-background-color: #0b1326;
-  --ifm-background-surface-color: #131b2e;
-  --ifm-card-background-color: #222a3d;
-  
-  --ifm-color-emphasis-900: #ffffff;
-  --ifm-color-emphasis-800: #e6e6e6;
-  --ifm-color-emphasis-700: #cccccc;
-  --ifm-color-emphasis-600: #b3b3b3;
-  
   --ifm-navbar-background-color: #131b2e;
   --ifm-footer-background-color: #131b2e;
+  
+  /* Card styling */
+  --ifm-card-border-radius: 16px;
   --ifm-card-background-color: #222a3d;
   --ifm-card-border-color: transparent;
   
+  /* Link colors */
   --ifm-link-color: #00d1ff;
   --ifm-link-hover-color: #1ad6ff;
+  
+  /* Navbar shadow */
+  --ifm-navbar-shadow: none;
+  
+  /* Custom surface colors */
+  --color-surface: #0b1326;
+  --color-surface-low: #131b2e;
+  --color-surface-high: #222a3d;
+  --color-surface-highest: #2d3449;
+  --color-primary: #00d1ff;
+  --color-primary-dim: #a4e6ff;
+  --color-outline-variant: rgba(60, 73, 78, 0.2);
+}
+
+/* Light theme (for toggle) */
+[data-theme='light'] {
+  --ifm-color-primary: #00a8cc;
+  --ifm-color-primary-dark: #0097b8;
+  --ifm-color-primary-darker: #008ca9;
+  --ifm-color-primary-darkest: #007289;
+  --ifm-color-primary-light: #0ebde6;
+  --ifm-color-primary-lighter: #19c4ed;
+  --ifm-color-primary-lightest: #33ccf5;
+
+  --ifm-background-color: #f8fafc;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
+  
+  --ifm-color-emphasis-900: #1a1a2e;
+  --ifm-color-emphasis-800: #2d2d44;
+  --ifm-color-emphasis-700: #4a4a5e;
+  --ifm-color-emphasis-600: #6b6b7e;
+  
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
+  --ifm-card-border-color: #e2e8f0;
+  
+  --ifm-link-color: #00a8cc;
+  --ifm-link-hover-color: #0097b8;
 }
 
 /* Apply heading font */
@@ -121,13 +142,31 @@ code {
 
 /* Button styling */
 .button--primary {
-  background-color: var(--ifm-color-primary);
+  background: linear-gradient(135deg, #00d1ff, #a4e6ff);
   color: #0b1326;
   border: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .button--primary:hover {
-  background-color: var(--ifm-color-primary-dark);
+  background: linear-gradient(135deg, #00bce6, #99d6f0);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 209, 255, 0.3);
+}
+
+.button--outline {
+  background: transparent;
+  color: #00d1ff;
+  border: 2px solid rgba(0, 209, 255, 0.3);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.button--outline:hover {
+  background: rgba(0, 209, 255, 0.1);
+  border-color: #00d1ff;
+  transform: translateY(-2px);
 }
 
 /* Glassmorphism for modals */
@@ -141,17 +180,70 @@ code {
   background-color: var(--ifm-background-surface-color);
 }
 
-/* For light mode (if ever needed) */
-[data-theme='light'] {
-  --ifm-background-color: #f5f7fa;
-  --ifm-background-surface-color: #ffffff;
-  --ifm-card-background-color: #ffffff;
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #ffffff;
-  
-  /* Text colors for light mode */
-  --ifm-color-emphasis-900: #1a1a1a;
-  --ifm-color-emphasis-800: #333333;
-  --ifm-color-emphasis-700: #4d4d4d;
-  --ifm-color-emphasis-600: #666666;
+/* Selection styling */
+::selection {
+  background: rgba(0, 209, 255, 0.3);
+  color: #00d1ff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-high);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-highest);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Utility classes for animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Grid background pattern */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(60, 73, 78, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 73, 78, 0.2) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 50px -12px rgba(0, 209, 255, 0.3);
+}
+
+.glow-primary-sm {
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.4);
 }

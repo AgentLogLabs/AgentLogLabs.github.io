@@ -30,14 +30,13 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "技术参考",
-      items: ["architecture", "api-reference", "data-model", "faq"],
+      items: ["architecture", "api-reference", "data-model", "reference/features", "faq"],
     },
     {
       type: "category",
       label: "开发",
       items: ["development", "contributing"],
     },
-    "features",
   ],
 };
 

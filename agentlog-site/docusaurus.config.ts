@@ -69,7 +69,7 @@ const config: Config = {
       },
     },
     // Replace with your project's social card
-    image: 'img/Generated Image March 27, 2026 - 8_30PM.jpg',
+    image: 'img/logo.png',
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false,
@@ -78,7 +78,7 @@ const config: Config = {
       title: 'AgentLog',
       logo: {
         alt: 'AgentLog Logo',
-        src: 'img/Generated Image March 27, 2026 - 8_30PM.jpg',
+        src: 'img/logo.png',
       },
       items: [
         {

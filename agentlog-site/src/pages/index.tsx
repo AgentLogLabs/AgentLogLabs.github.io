@@ -5,15 +5,41 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Plane, ChevronRight } from 'lucide-react';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springX = useSpring(mouseX, { stiffness: 150, damping: 15 });
+  const springY = useSpring(mouseY, { stiffness: 150, damping: 15 });
+
+  const rotateX = useTransform(springY, [-0.5, 0.5], [25, -25]);
+  const rotateY = useTransform(springX, [-0.5, 0.5], [-25, 25]);
+
+  const glowScale = useTransform(springX, [-0.5, 0.5], [1, 1.5]);
+  const glowOpacity = useTransform(springY, [-0.5, 0.5], [0.15, 0.5]);
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header
+      className={clsx('hero hero--primary', styles.heroBanner)}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        mouseX.set(x);
+        mouseY.set(y);
+      }}
+      onMouseLeave={() => {
+        mouseX.set(0);
+        mouseY.set(0);
+      }}
+    >
       {/* Background Pattern */}
       <div className={styles.heroBackground}>
         <div className={styles.heroGradient} />
@@ -33,8 +59,12 @@ function HomepageHeader() {
         >
           {/* Logo Icon */}
           <div className={styles.heroLogoWrapper}>
-            <div className={styles.heroLogoGlow} />
             <motion.div
+              className={styles.heroLogoGlow}
+              style={{ scale: glowScale, opacity: glowOpacity }}
+            />
+            <motion.div
+              style={{ rotateX, rotateY, transformPerspective: 800 }}
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className={styles.heroLogo}

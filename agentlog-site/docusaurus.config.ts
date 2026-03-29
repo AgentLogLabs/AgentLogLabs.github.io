@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'AgentLog',
-  tagline: 'AI 编程行车记录仪',
+  tagline: 'AI 编程飞行记录仪',
   favicon: 'img/Generated Image March 27, 2026 - 8_30PM.jpg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -46,10 +46,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/agentlog/agentlog/tree/main/',
+          lastVersion: '0.1.0',
         },
         blog: false,
         theme: {
@@ -160,7 +159,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AgentLog. AI 编程行车记录仪。`,
+      copyright: `Copyright © ${new Date().getFullYear()} AgentLog. AI 编程飞行记录仪。`,
     },
     prism: {
       theme: prismThemes.github,

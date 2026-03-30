@@ -37,7 +37,7 @@ export default function Logo(props) {
       style={{display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none'}}
     >
       <div style={styles.logoWrapper}>
-        <img src="/img/logo.png" style={styles.logoImg} alt="logo" />
+        <img src="/img/128透明.png" style={styles.logoImg} alt="logo" />
       </div>
       {navbarTitle != null && <b className={titleClassName}>{navbarTitle}</b>}
     </Link>

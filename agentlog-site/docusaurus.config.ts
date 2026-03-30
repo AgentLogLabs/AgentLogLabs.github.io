@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'AgentLog',
   tagline: 'AI 编程飞行记录仪',
-  favicon: 'img/Generated Image March 27, 2026 - 8_30PM.jpg',
+  favicon: 'img/128.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -47,7 +47,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/agentlog/agentlog/tree/main/',
+            'https://github.com/agentloglabs/agentlog/tree/main/',
           lastVersion: '0.1.0',
         },
         blog: false,
@@ -98,7 +98,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/agentlog/agentlog',
+          href: 'https://github.com/agentloglabs/agentlog',
           label: 'GitHub',
           position: 'right',
         },
@@ -133,11 +133,11 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/agentlog/agentlog',
+              href: 'https://github.com/agentloglabs/agentlog',
             },
             {
               label: '问题反馈',
-              href: 'https://github.com/agentlog/agentlog/issues',
+              href: 'https://github.com/agentloglabs/agentlog/issues',
             },
           ],
         },
@@ -146,11 +146,11 @@ const config: Config = {
           items: [
             {
               label: '项目架构',
-              href: 'https://github.com/agentlog/agentlog#项目架构',
+              href: 'https://github.com/agentloglabs/agentlog#项目架构',
             },
             {
               label: 'API 文档',
-              href: 'https://github.com/agentlog/agentlog#后台-api-一览',
+              href: 'https://github.com/agentloglabs/agentlog#后台-api-一览',
             },
           ],
         },

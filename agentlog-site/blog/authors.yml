@@ -1,7 +1,7 @@
 agentlog:
   name: AgentLog Team
   title: AI 编程飞行记录仪
-  url: https://github.com/agentlog/agentlog
+  url: https://github.com/agentloglabs/agentlog
   image_url: https://github.com/agentlog.png
   page: true
   socials:

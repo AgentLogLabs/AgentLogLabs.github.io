@@ -346,7 +346,7 @@ ps aux | grep agentlog
    - 复现步骤
 
 2. **提交 Issue**：
-   - [GitHub Issues](https://github.com/agentlog/agentlog/issues)
+   - [GitHub Issues](https://github.com/agentloglabs/agentlog/issues)
    - 使用问题模板，提供完整信息
 
 ### 功能请求

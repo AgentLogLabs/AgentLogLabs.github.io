@@ -83,7 +83,7 @@ VS Code 插件包含内置后端，最适合仅使用 VS Code 的用户。
 ### 安装步骤
 
 ```bash
-git clone https://github.com/agentlog/agentlog.git
+git clone https://github.com/agentloglabs/agentlog.git
 cd agentlog/docker
 cp .env.example .env
 docker-compose up -d

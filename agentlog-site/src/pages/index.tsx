@@ -76,7 +76,7 @@ function HomepageHeader() {
           <Heading as="h1" className={styles.heroTitle}>
             AI 编程飞行记录仪
           </Heading>
-          <p className={styles.heroSubtitle}>自动捕获 AI Agent 交互日志，与 Git Commit 绑定，一键导出周报</p>
+          <p className={styles.heroSubtitle}>见证 AI 编程范式革命</p>
 
           <div className={styles.buttons}>
             <Link

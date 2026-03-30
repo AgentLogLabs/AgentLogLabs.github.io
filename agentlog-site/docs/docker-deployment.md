@@ -16,7 +16,7 @@ sidebar_position: 10
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/agentlog/agentlog.git
+git clone https://github.com/agentloglabs/agentlog.git
 cd agentlog
 ```
 

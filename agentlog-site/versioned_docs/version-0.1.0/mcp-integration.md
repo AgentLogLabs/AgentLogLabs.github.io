@@ -304,7 +304,7 @@ export AGENTLOG_LOG_LEVEL=debug
 
 如需支持新的 AI Agent 或遇到配置问题，请：
 
-1. 查看 [GitHub Issues](https://github.com/agentlog/agentlog/issues) 是否有类似问题
+1. 查看 [GitHub Issues](https://github.com/agentloglabs/agentlog/issues) 是否有类似问题
 2. 提交新 Issue 时，附上：
    - AI Agent 名称和版本
    - 配置文件内容（脱敏后）

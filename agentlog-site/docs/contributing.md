@@ -14,7 +14,7 @@ sidebar_position: 2
 - **文档问题**：指出不准确、缺失或难以理解的部分
 
 **报告前请检查**：
-- [Issues](https://github.com/agentlog/agentlog/issues) 是否已有类似问题
+- [Issues](https://github.com/agentloglabs/agentlog/issues) 是否已有类似问题
 - 使用最新的代码版本
 - 提供完整的错误日志和环境信息
 
@@ -52,7 +52,7 @@ git clone https://github.com/你的用户名/agentlog.git
 cd agentlog
 
 # 3. 添加上游仓库
-git remote add upstream https://github.com/agentlog/agentlog.git
+git remote add upstream https://github.com/agentloglabs/agentlog.git
 
 # 4. 创建功能分支
 git checkout -b feat/新功能名称
@@ -304,7 +304,7 @@ async function createSession(data: CreateSessionDTO): Promise<string> {
 ## 资源链接
 
 ### 开发资源
-- [项目 README](https://github.com/agentlog/agentlog#readme)
+- [项目 README](https://github.com/agentloglabs/agentlog#readme)
 - [架构文档](./architecture)
 - [API 参考](./api-reference)
 - [数据模型](./data-model)
@@ -316,8 +316,8 @@ async function createSession(data: CreateSessionDTO): Promise<string> {
 - [MCP 协议介绍](https://modelcontextprotocol.io/introduction)
 
 ### 联系方式
-- [GitHub Issues](https://github.com/agentlog/agentlog/issues)：问题和功能请求
-- [GitHub Discussions](https://github.com/agentlog/agentlog/discussions)：技术讨论
+- [GitHub Issues](https://github.com/agentloglabs/agentlog/issues)：问题和功能请求
+- [GitHub Discussions](https://github.com/agentloglabs/agentlog/discussions)：技术讨论
 - [电子邮件](mailto:maintainers@agentlog.ai)：私下沟通（如需要）
 
 ## 致谢
@@ -325,7 +325,7 @@ async function createSession(data: CreateSessionDTO): Promise<string> {
 感谢所有为 AgentLog 项目做出贡献的人！您的每一份贡献都让这个项目变得更好。
 
 ### 贡献者名单
-查看 [GitHub Contributors](https://github.com/agentlog/agentlog/graphs/contributors) 页面。
+查看 [GitHub Contributors](https://github.com/agentloglabs/agentlog/graphs/contributors) 页面。
 
 ### 特别感谢
 - 早期测试用户提供宝贵反馈

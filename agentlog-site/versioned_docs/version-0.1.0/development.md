@@ -61,7 +61,7 @@ agentlog/
 ### 1. 获取代码
 ```bash
 # 克隆仓库
-git clone https://github.com/agentlog/agentlog.git
+git clone https://github.com/agentloglabs/agentlog.git
 cd agentlog
 
 # 安装依赖
@@ -444,6 +444,6 @@ pnpm test -- --inspect-brk
 - 阅读类型定义理解数据结构
 
 ### 社区支持
-- [GitHub Issues](https://github.com/agentlog/agentlog/issues)
-- [Discussions](https://github.com/agentlog/agentlog/discussions)
+- [GitHub Issues](https://github.com/agentloglabs/agentlog/issues)
+- [Discussions](https://github.com/agentloglabs/agentlog/discussions)
 - 提交 Pull Request 前先讨论方案

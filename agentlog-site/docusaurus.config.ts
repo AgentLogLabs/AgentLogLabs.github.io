@@ -146,7 +146,7 @@ const config: Config = {
           items: [
             {
               label: '项目架构',
-              href: 'https://github.com/agentloglabs/agentlog#项目架构',
+              to: '/architecture',
             },
             {
               label: 'API 文档',

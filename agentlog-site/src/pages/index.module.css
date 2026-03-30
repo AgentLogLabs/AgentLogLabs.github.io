@@ -135,8 +135,13 @@
   }
 
   .heroLogo {
-    width: 72px;
-    height: 72px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroLogoImg {
+    width: 300px;
+    height: 300px;
   }
 
   .heroLogoIcon {

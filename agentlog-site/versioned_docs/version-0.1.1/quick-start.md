@@ -16,6 +16,9 @@ VS Code 插件包含内置后端，最适合仅使用 VS Code 的用户。
 ### 安装步骤
 
 1. 在 VS Code 中搜索并安装 **AgentLog** 插件
+
+> 🚀 [**直接下载 VSCode 插件**](https://marketplace.visualstudio.com/items?itemName=AgentLogLabs.agentlog-vscode)
+
 2. 安装完成后，VS Code 侧边栏会出现 AgentLog 面板
 3. 插件会自动启动后台服务（端口 7892）
 

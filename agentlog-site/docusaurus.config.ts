@@ -18,12 +18,12 @@ const config: Config = {
   url: 'https://agentlog.ai',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/AgentLogWeb/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'AgentLogLabs', // Usually your GitHub org/user name.
-  projectName: 'AgentLogWeb', // Usually your repo name.
+  projectName: 'AgentLogLabs.github.io', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 

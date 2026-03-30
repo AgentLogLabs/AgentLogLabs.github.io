@@ -26,7 +26,11 @@ jobs:
         working-directory: agentlog-site
       - run: npm run build
         working-directory: agentlog-site
-      - uses: actions/upload-pages-artifact@v3
+      - uses: peaceiris/actions-gh-pages@v3
         with:
-          path: agentlog-site/build
-      - uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./agentlog-site/build
+          publish_branch: main
+          destination_dir: ./
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com

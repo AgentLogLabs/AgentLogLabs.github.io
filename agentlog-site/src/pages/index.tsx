@@ -6,7 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Plane, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 import styles from './index.module.css';
 
@@ -69,18 +69,14 @@ function HomepageHeader() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className={styles.heroLogo}
             >
-              <div className={styles.heroLogoCircle} />
-              <Plane className={styles.heroLogoIcon} />
-              <div className={styles.speedLine1} />
-              <div className={styles.speedLine2} />
-              <div className={styles.speedLine3} />
+              <img src="/img/logo.png" className={styles.heroLogoImg} alt="logo" />
             </motion.div>
           </div>
 
           <Heading as="h1" className={styles.heroTitle}>
-            {siteConfig.title}
+            AI 编程飞行记录仪
           </Heading>
-          <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
+          <p className={styles.heroSubtitle}>自动捕获 AI Agent 交互日志，与 Git Commit 绑定，一键导出周报</p>
 
           <div className={styles.buttons}>
             <Link

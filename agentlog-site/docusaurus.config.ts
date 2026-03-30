@@ -102,6 +102,12 @@ const config: Config = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+          href: 'https://marketplace.visualstudio.com/items?itemName=AgentLogLabs.agentlog-vscode',
+          label: '下载 VSCode 插件',
+          position: 'right',
+          className: 'button button--primary button--sm',
+        },
       ],
     },
     footer: {
@@ -146,7 +152,7 @@ const config: Config = {
           items: [
             {
               label: '项目架构',
-              to: '/architecture',
+              to: '/docs/architecture',
             },
             {
               label: 'API 文档',

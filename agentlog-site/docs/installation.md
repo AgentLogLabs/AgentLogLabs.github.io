@@ -17,6 +17,10 @@ sidebar_position: 1
 
 在 VS Code 中搜索 **AgentLog**，点击安装。
 
+[![Marketplace](https://img.shields.io/badge/Marketplace-AgentLog-brightgreen?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=AgentLogLabs.agentlog-vscode)
+
+或者 [直接下载 VSCode 插件](https://marketplace.visualstudio.com/items?itemName=AgentLogLabs.agentlog-vscode)
+
 ### 2. 开始使用
 
 安装完成后，VS Code 侧边栏会出现 AgentLog 面板，表示安装成功。

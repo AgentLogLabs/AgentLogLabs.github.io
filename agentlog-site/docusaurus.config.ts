@@ -48,7 +48,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/agentloglabs/agentlog/tree/main/',
-          lastVersion: '0.1.5',
+          lastVersion: '0.1.6',
         },
         blog: false,
         theme: {
@@ -157,6 +157,14 @@ const config: Config = {
             {
               label: 'API 文档',
               href: 'https://github.com/agentloglabs/agentlog#后台-api-一览',
+            },
+          ],
+        },
+        {
+          title: '微信群',
+          items: [
+            {
+              html: `<img src="/img/AgentLog-wechat-QR.png" alt="微信群" style="width:120px;border-radius:8px;" />`,
             },
           ],
         },

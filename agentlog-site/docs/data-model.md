@@ -4,6 +4,10 @@ sidebar_position: 3
 
 # 数据模型
 
+:::warning Phase 1 更新警告
+AgentLog Phase 1 已全面废弃旧有的 `agent_sessions` 表模型，改为使用工业级可观测性标准的 **Trace/Span** 模型 (基于 ULID)。旧版 Session 数据将被废弃，新架构请参考下方的新版模型章节。
+:::
+
 AgentLog 使用 SQLite 数据库存储所有数据，采用严格的数据模型确保数据一致性和查询性能。
 
 ## 数据库概览
@@ -462,3 +466,53 @@ function generateId(): string {
 1. **定期清理**：设置合理的数据保留策略
 2. **索引维护**：定期分析索引使用情况，优化索引策略
 3. **备份验证**：定期验证备份文件的完整性和可恢复性
+## Phase 1 新数据模型 (Trace & Span)
+
+为了实现跨 Agent 状态穿透与人机混合追踪，AgentLog Phase 1 引入了全新的数据模型。
+
+### traces 表
+存储全局任务工作流，一个 Trace 可以穿透多个 Agent 的生命周期。
+
+| 字段名 | 类型 | 约束 | 说明 |
+|--------|------|------|------|
+| `trace_id` | TEXT | PRIMARY KEY | 全局追踪 ID (基于 ULID) |
+| `created_at` | TEXT | NOT NULL | 创建时间 |
+| `intent` | TEXT | | 全局任务意图 |
+| `status` | TEXT | | 当前状态 |
+
+### spans 表
+存储所有工作单元，包括 Agent 工具调用、大模型推理（`<think>`）、人类 Git 提交等。
+
+| 字段名 | 类型 | 约束 | 说明 |
+|--------|------|------|------|
+| `span_id` | TEXT | PRIMARY KEY | 工作单元 ID (基于 ULID) |
+| `trace_id` | TEXT | NOT NULL | 归属的 Trace ID，外键 |
+| `actor_type` | TEXT | NOT NULL | 参与者类型：`agent` 或 `human` |
+| `payload` | TEXT | | 统一的载荷数据 (JSON 格式)，例如 Git Diff、错误栈等 |
+| `created_at` | TEXT | NOT NULL | 创建时间 |
+
+
+## Phase 1 新数据模型 (Trace & Span)
+
+为了实现跨 Agent 状态穿透与人机混合追踪，AgentLog Phase 1 引入了全新的数据模型。
+
+### traces 表
+存储全局任务工作流，一个 Trace 可以穿透多个 Agent 的生命周期。
+
+| 字段名 | 类型 | 约束 | 说明 |
+|--------|------|------|------|
+| `trace_id` | TEXT | PRIMARY KEY | 全局追踪 ID (基于 ULID) |
+| `created_at` | TEXT | NOT NULL | 创建时间 |
+| `intent` | TEXT | | 全局任务意图 |
+| `status` | TEXT | | 当前状态 |
+
+### spans 表
+存储所有工作单元，包括 Agent 工具调用、大模型推理（`<think>`）、人类 Git 提交等。
+
+| 字段名 | 类型 | 约束 | 说明 |
+|--------|------|------|------|
+| `span_id` | TEXT | PRIMARY KEY | 工作单元 ID (基于 ULID) |
+| `trace_id` | TEXT | NOT NULL | 归属的 Trace ID，外键 |
+| `actor_type` | TEXT | NOT NULL | 参与者类型：`agent` 或 `human` |
+| `payload` | TEXT | | 统一的载荷数据 (JSON 格式)，例如 Git Diff、错误栈等 |
+| `created_at` | TEXT | NOT NULL | 创建时间 |

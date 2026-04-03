@@ -442,3 +442,17 @@ GET /api/sessions/stats → { "totalSessions": 150, "unboundSessions": 3, ... }
 - **自动重试**：MCP 连接失败时自动重连
 - **数据校验**：定期检查数据库一致性
 - **备份恢复**：支持数据库备份和恢复功能
+## Phase 1 新架构：双流采集与 JIT 状态复水
+
+AgentLog Phase 1 对原有架构进行了重大升级，确立了 **Trace/Span 体系**。
+
+### 1. 网关 + 旁路探针双流采集机制
+为彻底解决人类微操与 Agent 流转的断点问题，我们引入了双流采集引擎：
+- **外部流 (External Stream)**：通过 Git Hook (`post-commit`) 与编辑器插件，自动捕获人类开发者的手动修改与提交流程，封装为 `actor: human` 的 Span 并推送至网关。
+- **内部流 (Internal Stream)**：通过 OpenClaw 旁路探针 (Telemetry Probe)，无阻塞拦截 `<think>` 与工具调用，通过 `POST /api/spans` 进行上报。
+
+### 2. JIT Context Hydration (跨 Agent 急诊交接)
+当 Agent 流水线中断（例如 Builder Agent 运行失败）时：
+- 无需将完整的日志作为 prompt 传递。
+- 只需将当前失败任务的 `TraceID` 传给后续接管的 Reviewer Agent。
+- Reviewer Agent 可通过内置的 MCP 工具 `get_failed_attempts(trace_id)` 实时从网关提取结构化的历史栈和环境状态，实现状态**复水 (Hydration)**。

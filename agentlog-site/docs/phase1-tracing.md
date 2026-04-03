@@ -23,20 +23,30 @@ AgentLog Phase 1 的核心创新在于**人机一致性追踪**：
 
 **痛点**：Agent 陷入死循环或遇到复杂的逻辑问题，人类开发者需要紧急介入，手动修改几行代码并提交，然后让 Agent 继续工作。
 
-**工作流**：
-1. **Agent 报错**：工作流暂停，Agent 挂起。
-2. **人类介入**：开发者在 VS Code 等 IDE 中直接修改代码，并执行 `git commit -m "fix: 修复死循环"`。
-3. **静默捕获**：AgentLog 部署的 Git Hook (`post-commit`) 会瞬间触发，将这次 Diff 变更封装为一个 Span（标识 `actor: human`），上报至网关并挂载到当前工作流的 TraceID。
-4. **唤醒继续**：开发者重新唤醒 Agent，Agent 通过内部探针拉取当前 TraceID 的最新状态，瞬间知晓开发者刚才的修改内容，并基于新的代码基线继续向下执行。
 
-### 场景二：跨 Agent 的“急诊交接” (JIT Context Hydration)
-
-**痛点**：前置 Agent（如架构师 Agent 或构建 Agent）任务失败，后续的测试 Agent 或修复 Agent 缺乏上文的报错日志和环境状态。
 
 **工作流**：
 1. **任务失败透传**：Builder Agent 构建失败，只需向后继 Reviewer 抛出极简指令：“任务失败，请接手。TraceID: T-888”。
 2. **自主溯源**：Reviewer Agent 收到指令后，通过自带的 MCP 工具调用 `get_failed_attempts(trace_id="T-888")` 发起主动查询。
 3. **状态复水 (Hydration)**：AgentLog 网关立即返回结构化的历史报错栈、输入参数及上一步的环境状态。Reviewer Agent 无需从零开始诊断，直接基于错误栈进行修复。
+
+```mermaid
+sequenceDiagram
+    participant Builder as Builder Agent
+    participant Gateway as AgentLog Gateway
+    participant Reviewer as Reviewer Agent
+    
+    Builder->>Gateway: 构建失败，生成错误 Span (TraceID: T-888)
+    Builder->>Reviewer: 发送指令: "任务失败请接手，TraceID: T-888"
+    Reviewer->>Gateway: MCP 调用: get_failed_attempts("T-888")
+    Gateway-->>Reviewer: 返回结构化报错栈、参数及历史环境状态
+    Reviewer->>Reviewer: 状态复水，分析上下文及报错原因
+    Reviewer->>Gateway: 提交修复方案并继续执行
+```
+
+> 🖼️ **[在此处插入截屏/录屏占位]**
+> *说明：截屏/录屏展示 Builder 任务失败后，终端/UI 将 TraceID 传递给 Reviewer。Reviewer 通过调用 `get_failed_attempts` 工具瞬间拉取报错详情的日志画面。*
+
 
 ## 数据模型：Trace 与 Span
 

@@ -32,16 +32,28 @@ AgentLog Phase 1 的核心创新在于**人机一致性追踪**：
 
 ```mermaid
 sequenceDiagram
-    participant Builder as Builder Agent
-    participant Gateway as AgentLog Gateway
-    participant Reviewer as Reviewer Agent
-    
-    Builder->>Gateway: 构建失败，生成错误 Span (TraceID: T-888)
-    Builder->>Reviewer: 发送指令: "任务失败请接手，TraceID: T-888"
-    Reviewer->>Gateway: MCP 调用: get_failed_attempts("T-888")
-    Gateway-->>Reviewer: 返回结构化报错栈、参数及历史环境状态
-    Reviewer->>Reviewer: 状态复水，分析上下文及报错原因
-    Reviewer->>Gateway: 提交修复方案并继续执行
+    autonumber
+    box rgba(253, 245, 230, 0.8) "Agent Task Pipeline (智能体流水线)"
+        participant Builder as 🏗️ Builder Agent
+        participant Reviewer as 🕵️ Reviewer Agent
+    end
+    box rgba(255, 240, 245, 0.8) "AgentLog Infrastructure"
+        participant Gateway as ☁️ Gateway (网关)
+    end
+
+    Note over Builder,Gateway: 阶段一：任务中断与捕获
+    Builder-xGateway: ❌ 构建失败，生成错误 Span (TraceID: T-888)
+
+    Note over Builder,Reviewer: 阶段二：极简跨 Agent 调度
+    Builder->>Reviewer: 📨 发送指令: "任务失败请接手, TraceID: T-888"
+
+    Note over Reviewer,Gateway: 阶段三：JIT 历史状态复水
+    Reviewer->>Gateway: 🔍 MCP 调用: get_failed_attempts("T-888")
+    Gateway-->>Reviewer: 📦 返回结构化报错栈、参数及历史环境状态
+
+    Note over Reviewer,Reviewer: 阶段四：上下文恢复与执行
+    Reviewer->>Reviewer: 🧠 状态复水，分析上下文及报错原因
+    Reviewer->>Gateway: ✅ 提交修复方案并继续执行
 ```
 
 > 🖼️ **[在此处插入截屏/录屏占位]**

@@ -169,7 +169,14 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AgentLog. AI 编程飞行记录仪。`,
+      copyright: `Copyright © ${new Date().getFullYear()} AgentLog. AI 编程飞行记录仪。 
+        <span style="display:inline-block;animation:fly 2s ease-in-out infinite;">✈️</span>
+        <style>
+          @keyframes fly {
+            0%, 100% { transform: translateY(0) rotate(-10deg); }
+            50% { transform: translateY(-8px) rotate(10deg); }
+          }
+        </style>`,
     },
     prism: {
       theme: prismThemes.github,

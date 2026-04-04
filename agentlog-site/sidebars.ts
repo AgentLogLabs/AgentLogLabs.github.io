@@ -25,7 +25,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "使用指南",
-      items: ["tutorials", "configuration", "export-guide"],
+      items: ["tutorials", "phase1-tracing", "configuration", "export-guide"],
     },
     {
       type: "category",

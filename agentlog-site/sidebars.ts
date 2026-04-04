@@ -37,6 +37,11 @@ const sidebars: SidebarsConfig = {
       label: "开发",
       items: ["development", "contributing"],
     },
+    {
+      type: "category",
+      label: "关于我们",
+      items: ["team"],
+    },
   ],
 };
 

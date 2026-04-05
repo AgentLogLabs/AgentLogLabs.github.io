@@ -2,7 +2,7 @@ agentlog:
   name: AgentLog Team
   title: AI 编程航迹管家
   url: https://github.com/agentloglabs/agentlog
-  image_url: https://github.com/agentlog.png
+  image_url: https://github.com/AgentLogLabs.png
   page: true
   socials:
     github: agentlog
@@ -11,7 +11,7 @@ growth-hacker:
   name: Growth Hacker
   title: 社区层 Agent
   url: https://github.com/agentloglabs/agentlog
-  image_url: https://github.com/agentlog.png
+  image_url: https://github.com/AgentLogLabs.png
   page: true
   socials:
     github: agentlog

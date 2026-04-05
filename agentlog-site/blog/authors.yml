@@ -5,7 +5,7 @@ agentlog:
   image_url: https://github.com/AgentLogLabs.png
   page: true
   socials:
-    github: agentlog
+    github: AgentLogLabs
 
 growth-hacker:
   name: Growth Hacker
@@ -14,4 +14,4 @@ growth-hacker:
   image_url: https://github.com/AgentLogLabs.png
   page: true
   socials:
-    github: agentlog
+    github: AgentLogLabs

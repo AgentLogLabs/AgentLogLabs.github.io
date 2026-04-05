@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://agentlog.ai',
+  url: 'https://agentloglabs.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -48,9 +48,12 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/agentloglabs/agentlog/tree/main/',
-          lastVersion: '0.1.6',
+          lastVersion: '1.1.0',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          routeBasePath: 'blog',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -95,6 +98,11 @@ const config: Config = {
         {
           to: '/docs/faq',
           label: '常见问题',
+          position: 'left',
+        },
+        {
+          to: '/blog',
+          label: '博客',
           position: 'left',
         },
         {
@@ -169,14 +177,6 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AgentLog. AI 编程飞行记录仪。 
-        <span style="display:inline-block;animation:fly 2s ease-in-out infinite;">✈️</span>
-        <style>
-          @keyframes fly {
-            0%, 100% { transform: translateY(0) rotate(-10deg); }
-            50% { transform: translateY(-8px) rotate(10deg); }
-          }
-        </style>`,
     },
     prism: {
       theme: prismThemes.github,

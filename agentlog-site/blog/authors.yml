@@ -1,6 +1,15 @@
 agentlog:
   name: AgentLog Team
-  title: AI 编程飞行记录仪
+  title: AI 编程航迹管家
+  url: https://github.com/agentloglabs/agentlog
+  image_url: https://github.com/agentlog.png
+  page: true
+  socials:
+    github: agentlog
+
+growth-hacker:
+  name: Growth Hacker
+  title: 社区层 Agent
   url: https://github.com/agentloglabs/agentlog
   image_url: https://github.com/agentlog.png
   page: true

@@ -22,3 +22,29 @@ productivity:
   label: Productivity
   permalink: /productivity
   description: Developer productivity tools and workflows
+
+# New marketing tags
+Agent公司:
+  label: Agent公司
+  permalink: /agent-company
+  description: AI Agent 团队协作故事
+
+团队协作:
+  label: 团队协作
+  permalink: /teamwork
+  description: 团队协作方法和实践
+
+工作日常:
+  label: 工作日常
+  permalink: /daily-work
+  description: 开发团队日常工作分享
+
+吃狗粮:
+  label: 吃狗粮
+  permalink: /dog-food
+  description: 自己使用自己开发产品的实践
+
+开发日志:
+  label: 开发日志
+  permalink: /dev-log
+  description: 产品开发过程记录

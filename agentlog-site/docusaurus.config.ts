@@ -48,7 +48,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/agentloglabs/agentlog/tree/main/',
-          lastVersion: '1.1.0',
+          lastVersion: '1.1.1',
         },
         blog: {
           showReadingTime: true,

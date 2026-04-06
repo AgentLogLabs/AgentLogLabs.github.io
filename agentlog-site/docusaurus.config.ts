@@ -125,8 +125,8 @@ const config: Config = {
           title: '文档',
           items: [
             {
-              label: '介绍',
-              to: '/docs/intro',
+              label: '安装指南',
+              to: '/docs/installation',
             },
             {
               label: '快速开始',

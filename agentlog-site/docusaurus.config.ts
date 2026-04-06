@@ -133,10 +133,6 @@ const config: Config = {
               to: '/docs/quick-start',
             },
             {
-              label: '安装指南',
-              to: '/docs/installation',
-            },
-            {
               label: '常见问题',
               to: '/docs/faq',
             },

@@ -86,8 +86,8 @@ function HomepageHeader() {
             </Link>
             <Link
               className={clsx('button button--outline button--lg', styles.buttonOutline)}
-              to="/docs/installation">
-              安装指南
+              to="/docs/intro">
+              介绍
             </Link>
           </div>
         </motion.div>

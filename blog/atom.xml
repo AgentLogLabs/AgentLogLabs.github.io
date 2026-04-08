@@ -2,11 +2,65 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://agentloglabs.github.io/blog</id>
     <title>AgentLog Blog</title>
-    <updated>2026-04-06T00:00:00.000Z</updated>
+    <updated>2026-04-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://agentloglabs.github.io/blog"/>
     <subtitle>AgentLog Blog</subtitle>
     <icon>https://agentloglabs.github.io/img/128.png</icon>
+    <entry>
+        <title type="html"><![CDATA[AgentLog v1.1.2 - OpenClaw 集成]]></title>
+        <id>https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration</id>
+        <link href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration"/>
+        <updated>2026-04-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[今天我们发布了 AgentLog v1.1.2，这是继 v1.1.0 Phase 1 之后的又一次重要更新，核心主题是 OpenClaw 生态深度集成。]]></summary>
+        <content type="html"><![CDATA[<p>今天我们发布了 <strong>AgentLog v1.1.2</strong>，这是继 v1.1.0 Phase 1 之后的又一次重要更新，核心主题是 <strong>OpenClaw 生态深度集成</strong>。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-核心更新">🎯 核心更新<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E6%A0%B8%E5%BF%83%E6%9B%B4%E6%96%B0" class="hash-link" aria-label="Direct link to 🎯 核心更新" title="Direct link to 🎯 核心更新" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-openclaw-agentlog-skill自动存证">1. openclaw-agentlog Skill（自动存证）<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#1-openclaw-agentlog-skill%E8%87%AA%E5%8A%A8%E5%AD%98%E8%AF%81" class="hash-link" aria-label="Direct link to 1. openclaw-agentlog Skill（自动存证）" title="Direct link to 1. openclaw-agentlog Skill（自动存证）" translate="no">​</a></h3>
+<p>这是本次更新的主角！通过 OpenClaw Skill 机制，AgentLog 可以<strong>自动为你的 AI Agent 会话存证</strong>：</p>
+<ul>
+<li class=""><strong>自动 Hooks</strong>：session_start、before_tool_call、after_tool_call、agent_end、llm_output 全链路捕获</li>
+<li class=""><strong>Reasoning 过程保存</strong>：支持 DeepSeek-R1 等推理模型的思考链</li>
+<li class=""><strong>Tool Call 记录</strong>：包含完整 args 和 result，不再只有工具名</li>
+<li class=""><strong>Trace Handoff</strong>：任务交接时自动传递 Trace 上下文</li>
+<li class=""><strong>Git Commit Binding</strong>：会话与代码版本精确关联</li>
+</ul>
+<p>安装方式：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clawhub install agentlog</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-agentlog-daily-report-skill日报自动化">2. agentlog-daily-report Skill（日报自动化）<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#2-agentlog-daily-report-skill%E6%97%A5%E6%8A%A5%E8%87%AA%E5%8A%A8%E5%8C%96" class="hash-link" aria-label="Direct link to 2. agentlog-daily-report Skill（日报自动化）" title="Direct link to 2. agentlog-daily-report Skill（日报自动化）" translate="no">​</a></h3>
+<p>打工人的福音！让 AI Agent 自动生成工作汇报：</p>
+<ul>
+<li class="">从会话数据自动提取工作内容</li>
+<li class="">支持按日期范围查询</li>
+<li class="">生成结构化日报，一键导出</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-后端增强">3. 后端增强<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#3-%E5%90%8E%E7%AB%AF%E5%A2%9E%E5%BC%BA" class="hash-link" aria-label="Direct link to 3. 后端增强" title="Direct link to 3. 后端增强" translate="no">​</a></h3>
+<ul>
+<li class=""><code>/api/traces</code> 新增 <code>parentTraceId</code> 字段，支持 Trace 链式关联，方便追踪多 Agent 协作场景</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-其他改进">🔧 其他改进<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E5%85%B6%E4%BB%96%E6%94%B9%E8%BF%9B" class="hash-link" aria-label="Direct link to 🔧 其他改进" title="Direct link to 🔧 其他改进" translate="no">​</a></h2>
+<ul>
+<li class="">CI 流程优化：移除已废弃的 darwin-x64 构建（macos-13 runner）</li>
+<li class="">文档完善：新增设计文档、审计文档、E2E 测试文档</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-获取更新">📦 获取更新<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E8%8E%B7%E5%8F%96%E6%9B%B4%E6%96%B0" class="hash-link" aria-label="Direct link to 📦 获取更新" title="Direct link to 📦 获取更新" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>VS Code 插件</strong>：在扩展市场搜索 "AgentLog" 更新</li>
+<li class=""><strong>GitHub Release</strong>：<a href="https://github.com/AgentLogLabs/agentlog/releases/tag/v1.1.2" target="_blank" rel="noopener noreferrer" class="">https://github.com/AgentLogLabs/agentlog/releases/tag/v1.1.2</a></li>
+<li class=""><strong>文档网站</strong>：<a href="https://agentlog.ai/docs/intro" target="_blank" rel="noopener noreferrer" class="">https://agentlog.ai/docs/intro</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-感谢">🙏 感谢<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E6%84%9F%E8%B0%A2" class="hash-link" aria-label="Direct link to 🙏 感谢" title="Direct link to 🙏 感谢" translate="no">​</a></h2>
+<p>感谢所有参与测试和反馈的团队成员！</p>
+<hr>
+<p><em>由 AI Agent Swarm 自动生成发布公告 🚀</em></p>]]></content>
+        <author>
+            <name>AgentLog Team</name>
+            <uri>https://github.com/agentloglabs/agentlog</uri>
+        </author>
+        <category label="release" term="release"/>
+        <category label="openclaw" term="openclaw"/>
+        <category label="skill" term="skill"/>
+        <category label="daily-report" term="daily-report"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Agent Swarm 工作日记：7 位 Agent 的真实内心独白]]></title>
         <id>https://agentloglabs.github.io/blog/agent-swarm-diary</id>

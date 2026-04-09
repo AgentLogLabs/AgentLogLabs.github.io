@@ -9,46 +9,40 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[AgentLog v1.1.2 发布：OpenClaw 深度集成，AI 任务管理进入全自动存证时代]]></title>
+            <title><![CDATA[AgentLog v1.1.2 发布：OpenClaw 深度集成，AI 与人类的任务交接无缝化]]></title>
             <link>https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration</link>
             <guid>https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration</guid>
             <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[今天我们发布了 AgentLog v1.1.2，这是继 v1.1.0 Phase 1 之后的又一次重要更新。这次更新的核心主题是 OpenClaw 生态深度集成——你的 AI 助手现在能自动记录每一次思考、每一次工具调用、每一次任务交接，所有轨迹永久留存，随时可查。]]></description>
-            <content:encoded><![CDATA[<p>今天我们发布了 <strong>AgentLog v1.1.2</strong>，这是继 v1.1.0 Phase 1 之后的又一次重要更新。这次更新的核心主题是 <strong>OpenClaw 生态深度集成</strong>——你的 AI 助手现在能自动记录每一次思考、每一次工具调用、每一次任务交接，所有轨迹永久留存，随时可查。</p>
+            <description><![CDATA[今天我们发布了 AgentLog v1.1.2，核心主题是 OpenClaw 生态深度集成 + AI 与人类的任务交接。]]></description>
+            <content:encoded><![CDATA[<p>今天我们发布了 <strong>AgentLog v1.1.2</strong>，核心主题是 <strong>OpenClaw 生态深度集成 + AI 与人类的任务交接</strong>。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-这次更新了什么">🎯 这次更新了什么<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E8%BF%99%E6%AC%A1%E6%9B%B4%E6%96%B0%E4%BA%86%E4%BB%80%E4%B9%88" class="hash-link" aria-label="Direct link to 🎯 这次更新了什么" title="Direct link to 🎯 这次更新了什么" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-openclaw-agentlog-skill--ai-存证自动化">① openclaw-agentlog Skill — AI 存证自动化<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-openclaw-agentlog-skill--ai-%E5%AD%98%E8%AF%81%E8%87%AA%E5%8A%A8%E5%8C%96" class="hash-link" aria-label="Direct link to ① openclaw-agentlog Skill — AI 存证自动化" title="Direct link to ① openclaw-agentlog Skill — AI 存证自动化" translate="no">​</a></h3>
-<p>安装即用，OpenClaw Agent 的每一次"思考"和"行动"自动记录：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-openclaw-agentlog-skill--安装即用的-ai-存证">① openclaw-agentlog Skill — 安装即用的 AI 存证<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-openclaw-agentlog-skill--%E5%AE%89%E8%A3%85%E5%8D%B3%E7%94%A8%E7%9A%84-ai-%E5%AD%98%E8%AF%81" class="hash-link" aria-label="Direct link to ① openclaw-agentlog Skill — 安装即用的 AI 存证" title="Direct link to ① openclaw-agentlog Skill — 安装即用的 AI 存证" translate="no">​</a></h3>
+<p>通过 OpenClaw Skill 机制，AgentLog 可以<strong>自动为你的 AI Agent 会话存证</strong>，无需任何配置：</p>
 <ul>
 <li class=""><strong>全链路 Hooks</strong>：session_start、before_tool_call、after_tool_call、agent_end、llm_output 无死角覆盖</li>
 <li class=""><strong>Reasoning 过程捕获</strong>：DeepSeek-R1 等推理模型的思考链完整保存，AI 怎么想的全部可见</li>
-<li class=""><strong>Tool Call 完整记录</strong>：调了什么工具、传了什么参数、返回了什么结果——不再是只有工具名的空壳</li>
-<li class=""><strong>Trace Handoff</strong>：任务交接时，上下文无缝传递，接手 Agent 无需重复背景</li>
+<li class=""><strong>Tool Call 完整记录</strong>：调了什么工具、传了什么参数、返回了什么结果</li>
 <li class=""><strong>Git Commit Binding</strong>：每一次代码变更绑定对应 commit，审计无死角</li>
 </ul>
 <p>安装方式：</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clawhub install agentlog</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-agentlog-daily-report-skill--ai-日报自动生成">② agentlog-daily-report Skill — AI 日报自动生成<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-agentlog-daily-report-skill--ai-%E6%97%A5%E6%8A%A5%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90" class="hash-link" aria-label="Direct link to ② agentlog-daily-report Skill — AI 日报自动生成" title="Direct link to ② agentlog-daily-report Skill — AI 日报自动生成" translate="no">​</a></h3>
-<p>打工人的福音！你的 AI 助手每天自动生成工作汇报：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ai-与人类的-handoff--任务交接无缝化">② AI 与人类的 Handoff — 任务交接无缝化<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-ai-%E4%B8%8E%E4%BA%BA%E7%B1%BB%E7%9A%84-handoff--%E4%BB%BB%E5%8A%A1%E4%BA%A4%E6%8E%A5%E6%97%A0%E7%BC%9D%E5%8C%96" class="hash-link" aria-label="Direct link to ② AI 与人类的 Handoff — 任务交接无缝化" title="Direct link to ② AI 与人类的 Handoff — 任务交接无缝化" translate="no">​</a></h3>
+<p>这是本次更新最核心的差异化能力！</p>
+<p>当你需要<strong>从 AI Agent 切换到人工处理</strong>时（比如 AI 完成初稿，你需要接手修改）：</p>
 <ul>
-<li class="">从真实会话数据自动提取工作内容，无需人工填写</li>
-<li class="">支持按日期范围查询，灵活生成周期汇报</li>
-<li class="">结构化输出，一键导出周报或项目进度报告</li>
+<li class=""><strong>Trace 上下文自动传递</strong>：AI 做到哪一步、用了什么工具、产生了什么中间结果，接手的人类可以完整看到</li>
+<li class=""><strong>handoff 命令</strong>：在 OpenClaw 中执行 handoff，AI 会生成一份结构化的交接报告，包含：已完成事项、进行中事项、下一步建议</li>
+<li class=""><strong>无需复制粘贴</strong>：不像传统方式需要人工描述 AI 做了什么，接手方直接查看 AI 的完整思考和操作轨迹</li>
 </ul>
-<p>安装方式：</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clawhub install agentlog-daily-report</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain"># 在 OpenClaw 中触发 handoff</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">/handoff</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-apitraces-新增-parenttraceid-字段">③ /api/traces 新增 parentTraceId 字段<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-apitraces-%E6%96%B0%E5%A2%9E-parenttraceid-%E5%AD%97%E6%AE%B5" class="hash-link" aria-label="Direct link to ③ /api/traces 新增 parentTraceId 字段" title="Direct link to ③ /api/traces 新增 parentTraceId 字段" translate="no">​</a></h3>
-<p>支持 trace 链式关联，复杂任务的子任务轨迹可以追溯到父任务源头——多 Agent 协作场景下也能清晰还原完整决策链。</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-dashboard-增强">④ Dashboard 增强<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-dashboard-%E5%A2%9E%E5%BC%BA" class="hash-link" aria-label="Direct link to ④ Dashboard 增强" title="Direct link to ④ Dashboard 增强" translate="no">​</a></h3>
-<ul>
-<li class=""><strong>57 个实时 Skill 可视化</strong>：实时显示当前系统中所有活跃 Skill 的数量和状态</li>
-<li class=""><strong>Agent 全景状态面板</strong>：所有 Agent 的运行状态一目了然，团队协作情况尽在掌握</li>
-</ul>
+<p>支持 trace 链式关联，复杂任务的子任务轨迹可以追溯到父任务源头。</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-谁应该关注">🎯 谁应该关注<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E8%B0%81%E5%BA%94%E8%AF%A5%E5%85%B3%E6%B3%A8" class="hash-link" aria-label="Direct link to 🎯 谁应该关注" title="Direct link to 🎯 谁应该关注" translate="no">​</a></h2>
-<table><thead><tr><th>用户角色</th><th>核心价值</th></tr></thead><tbody><tr><td>团队负责人</td><td>了解 AI 每天做了什么、决策依据是什么</td></tr><tr><td>审计/合规同学</td><td>需要可追溯的 AI 操作记录</td></tr><tr><td>AI 开发者</td><td>需要调试、复现 AI 的思考过程</td></tr><tr><td>OpenClaw 用户</td><td>安装 Skill 后零成本获得完整存证能力</td></tr></tbody></table>
+<table><thead><tr><th>用户角色</th><th>核心价值</th></tr></thead><tbody><tr><td>团队负责人</td><td>AI 和人类协作时，了解 AI 做了什么、交接给人类时无需重复</td></tr><tr><td>审计/合规同学</td><td>需要可追溯的 AI 操作记录</td></tr><tr><td>AI 开发者</td><td>需要调试、复现 AI 的思考过程</td></tr><tr><td>OpenClaw 用户</td><td>安装 Skill 后零成本获得完整存证能力</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-升级方式">📦 升级方式<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E5%8D%87%E7%BA%A7%E6%96%B9%E5%BC%8F" class="hash-link" aria-label="Direct link to 📦 升级方式" title="Direct link to 📦 升级方式" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>VSCode 扩展</strong>：在扩展市场搜索 "AgentLog" 更新到最新版本</li>
-<li class=""><strong>OpenClaw 用户</strong>：<code>clawhub install agentlog</code> / <code>clawhub install agentlog-daily-report</code></li>
+<li class=""><strong>OpenClaw 用户</strong>：<code>clawhub install agentlog</code></li>
 <li class=""><strong>Release Note</strong>：<a href="https://github.com/AgentLogLabs/agentlog/releases/tag/v1.1.2" target="_blank" rel="noopener noreferrer" class="">https://github.com/AgentLogLabs/agentlog/releases/tag/v1.1.2</a></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-感谢">🙏 感谢<a href="https://agentloglabs.github.io/blog/agentlog-v1-1-2-openclaw-integration#-%E6%84%9F%E8%B0%A2" class="hash-link" aria-label="Direct link to 🙏 感谢" title="Direct link to 🙏 感谢" translate="no">​</a></h2>
@@ -58,8 +52,7 @@
             <category>release</category>
             <category>openclaw</category>
             <category>skill</category>
-            <category>daily-report</category>
-            <category>dashboard</category>
+            <category>handoff</category>
         </item>
         <item>
             <title><![CDATA[Agent Swarm 工作日记：7 位 Agent 的真实内心独白]]></title>
